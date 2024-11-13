@@ -39,7 +39,7 @@ class UneFenetre extends JFrame
         laTache3.start();
         laTache4.start();
 
-        setSize(4*LARG, 4*HAUT);
+        setSize(3*LARG, 3*HAUT);
         setVisible(true);
 
         // TODO

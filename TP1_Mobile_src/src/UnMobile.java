@@ -6,7 +6,6 @@ class UnMobile extends JPanel implements Runnable
     int saLargeur, saHauteur, sonDebDessin;
     final int sonPas = 10, sonTemps=50, sonCote=40;
     static SemaphoreGenerale sem1 = new SemaphoreGenerale(1);
-    static SemaphoreGenerale sem2 = new SemaphoreGenerale(1);
 
     UnMobile(int telleLargeur, int telleHauteur)
     {
@@ -36,7 +35,6 @@ class UnMobile extends JPanel implements Runnable
         }
         sem1.syncSignal();
 
-        sem2.syncWait();
         for (sonDebDessin= 2*(saLargeur) - sonPas; sonDebDessin < 3*(saLargeur) - sonPas; sonDebDessin+= sonPas)
         {
             repaint();
@@ -44,25 +42,7 @@ class UnMobile extends JPanel implements Runnable
             catch (InterruptedException telleExcp)
             {telleExcp.printStackTrace();}
         }
-        sem2.syncSignal();
 
-        for (sonDebDessin= 3*(saLargeur) - sonPas; sonDebDessin < 4*(saLargeur) - sonPas; sonDebDessin+= sonPas)
-        {
-            repaint();
-            try{Thread.sleep(sonTemps);}
-            catch (InterruptedException telleExcp)
-            {telleExcp.printStackTrace();}
-        }
-
-        for (sonDebDessin= 4*(saLargeur) - sonPas; sonDebDessin > 3*(saLargeur) - sonPas; sonDebDessin-= sonPas)
-        {
-            repaint();
-            try{Thread.sleep(sonTemps);}
-            catch (InterruptedException telleExcp)
-            {telleExcp.printStackTrace();}
-        }
-
-        sem2.syncWait();
         for (sonDebDessin= 3*(saLargeur) - sonPas; sonDebDessin > 2*(saLargeur) - sonPas; sonDebDessin-= sonPas)
         {
             repaint();
@@ -70,7 +50,6 @@ class UnMobile extends JPanel implements Runnable
             catch (InterruptedException telleExcp)
             {telleExcp.printStackTrace();}
         }
-        sem2.syncSignal();
 
         sem1.syncWait();
         for (sonDebDessin= 2*(saLargeur) - sonPas; sonDebDessin > saLargeur - sonPas; sonDebDessin-= sonPas)
