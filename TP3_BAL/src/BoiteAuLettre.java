@@ -1,18 +1,14 @@
+import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.SynchronousQueue;
+
 public class BoiteAuLettre {
+    private final BlockingQueue<String> queue = new SynchronousQueue<>();
 
-    private String lettre;
-    private int disponible;
-
-    public BoiteAuLettre(String lettre, int disponible) {
-        this.lettre = lettre;
-        this.disponible = disponible;
+    public void deposer(String lettre) throws InterruptedException {
+        queue.put(lettre);
     }
 
-    public void deposer(){
-
-    }
-
-    public void retirer(){
-
+    public String retirer() throws InterruptedException {
+        return queue.take();
     }
 }

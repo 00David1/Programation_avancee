@@ -1,12 +1,23 @@
-public class Consommateur {
+public class Consommateur implements Runnable {
+    private final BoiteAuLettre boite;
 
-    private String lecture;
-
-    public Consommateur(String lecture) {
-        this.lecture = lecture;
+    public Consommateur(BoiteAuLettre boite) {
+        this.boite = boite;
     }
 
-    public void run(){
+    @Override
+    public void run() {
+        try {
+            while (true) {
+                String lettre = boite.retirer();
+                System.out.println("Lettre retirée : " + lettre);
 
+                if ("Q".equalsIgnoreCase(lettre)) {
+                    break;
+                }
+            }
+        } catch (InterruptedException e) {
+            System.out.println("Consommateur interrompu");
+        }
     }
 }
