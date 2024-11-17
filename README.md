@@ -80,7 +80,7 @@ Les sémaphores gèrent l'accès à la section critique. Lorsqu'un cube entre, i
 
 #### Schéma UML 
 
-![alt text](image.png)
+![alt text](illustration_uml_tp1.png)
 
 ### TP2 : Synchronisation de l'Affichage de Listes 
 
@@ -120,7 +120,7 @@ Sans synchronisation, plusieurs threads peuvent écrire simultanément sur la co
 ---
 #### Schéma UML 
 
-![alt text](image-1.png)
+![alt text](illustration_uml_tp2.png)
 
 ### TP3 : Boîte aux Lettres - Problème du Producteur-Consommateur 
 
@@ -161,11 +161,9 @@ Le producteur ne peut produire qu'une lettre si la boîte est vide, et le consom
 
 #### Schéma UML 
 
-![alt text](image-2.png)
+![alt text](illustration_uml_tp3.png)
 
 ## Conclusion 
-
-Voici une version corrigée et améliorée de ta conclusion :
 
 Ces travaux pratiques nous ont permis d'explorer plusieurs aspects essentiels de la programmation multi-threadée. Tout d'abord, nous avons appris à identifier les sections critiques et les ressources critiques. Ensuite, nous avons utilisé des outils comme les sémaphores pour limiter l'accès aux sections ou ressources critiques et synchroniser les threads.
 Ces concepts sont cruciaux pour concevoir des applications multi-threadées robustes et performantes. En appliquant ces principes, nous avons appris à gérer efficacement les ressources partagées dans des environnements concurrents.
